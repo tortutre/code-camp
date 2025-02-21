@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: monospace;
+    text-align: center;
+    background-color: #000;
+    color: white; /* contraste le fond */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+#score {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+#score p {
+    margin: 5px 0;
+}
+
+/* Bouton reset scores */
+#resetScoresButton {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #f39c12; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease;
+}
+
+#resetScoresButton:hover {
+    background-color: #e67e22; 
+    transform: scale(1.05); /* léger agrandissement du bouton */
+}
+
+.board {
+    width: 300px;
+    height: 300px;
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 1px;
+    margin: 2rem auto;
+    border: 2px solid #fff;
+    background-color: #222; /* Fond du plateau en gris foncé */
+    animation: slideIn 0.5s ease-in-out;
+}
+
+.cell {
+    height: 100px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 64px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    background-color: #444; /* Légèrement plus sombre pour les cellules */
+    transition: background-color 0.3s, transform 0.2s ease;
+}
+
+.cell:hover {
+    background-color: #666; /* léger changement de couleur à la sélection */
+    transform: scale(1.1); /* léger zoom sur la cellule sélectionnée */
+}
+
+#gameEnd {
+    position: absolute;
+    display: none;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+#gameEnd p {
+    margin-bottom: 10px;
+}
+
+#gameEnd input {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#gameEnd input:hover {
+    background-color: #45a049;
+}
+
+/* Animations  avec key  */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
